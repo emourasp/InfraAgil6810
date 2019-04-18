@@ -1,0 +1,507 @@
+    1  PWD
+    2  pwd
+    3  #apt install ansible -y
+    4  apt update
+    5  apt install ansible -y
+    6  ansible --version
+    7  apt install python3-pip -y
+    8  pip install ansible --upgrade
+    9  pip3 install ansible --upgrade
+   10  pip3 install --upgrade pip
+   11  pip3.5 install ansible --upgrade
+   12  ansible --version
+   13  pip3.5 install ansible cryptography --upgrade
+   14  ansible --version
+   15  history
+   16  cd /etc/ansible/
+   17  ls
+   18  pwd
+   19  cd /etc/ansible/
+   20  ls /vagrant/
+   21  ansible all -m ping
+   22  ssh 192.168.99.10
+   23  ssh 192.168.99.20
+   24  ssh 192.168.99.30
+   25  ansible all -m ping
+   26  ssh 192.168.99.20
+   27  ssh 192.168.99.30
+   28  ansible all -m ping
+   29  ansible all -m package -a 'name=vim state=present'
+   30  pwd
+   31  mkdir playbooks
+   32  ls
+   33  cd playbooks/
+   34  vim hello-ansible.yml
+   35  ansible-playbook hello-ansible.yml 
+   36  ansible-playbook --syntax-check hello-ansible.yml 
+   37  #ansible-playbook --syntax-check hello-ansible.yml --> verificar sintaxe da playbook
+   38  vim hello-ansible.yml
+   39  openssl passwd -1
+   40  vim hello-ansible.yml
+   41  ansible-playbook hello-ansible.yml 
+   42  #ansible-playbook hello-ansible.yml --> executar a playbook
+   43  cat hello-ansible.yml 
+   44  ls
+   45  history
+   46  cd playbooks
+   47  ls
+   48  vim lab-ansible.yml
+   49  ls
+   50  mkdir lab
+   51  cd lab/
+   52  vim lab-ansible.yml
+   53  ansible-playbook lab-ansible.yml 
+   54  cat lab-ansible.yml
+   55  cd playbooks/
+   56  vim lab-ansible.yml
+   57  ls
+   58  cd lab/
+   59  vim lab-ansible.yml
+   60  ansible-playbook lab-ansible.yml 
+   61  vim lab-ansible.yml
+   62  ansible-playbook lab-ansible.yml 
+   63  vim lab-ansible.yml
+   64  ansible-playbook lab-ansible.yml 
+   65  ls
+   66  cd..
+   67  cd ..
+   68  ls
+   69  mkdir when
+   70  cd when/
+   71  ls
+   72  cd ..
+   73  cat lab-ansible.yml
+   74  cd lab
+   75  cat lab-ansible.yml 
+   76  cd ..
+   77  cd when/
+   78  vim when.yml
+   79  ansible-playbook when.yml 
+   80  vim when.yml
+   81  ansible-playbook when.yml 
+   82  vim when.yml
+   83  ansible-playbook when.yml 
+   84  vim when.yml
+   85  ansible-playbook when.yml 
+   86  vim when.yml
+   87  ansible-playbook when.yml 
+   88  cd ..
+   89  vim /etc/ansible/hosts 
+   90  ansible devops -m ping
+   91  sl
+   92  /usr/games/sl
+   93  /usr/games/sl -F
+   94  vim /root/.bashrc 
+   95  vim when.yml
+   96  ls
+   97  cd when/
+   98  vim when.yml
+   99  ansible-playbook when.yml 
+  100  . /root/.bashrc
+  101  ls
+  102  ls /
+  103  ansible-playbook when.yml 
+  104  . /root/.bashrc
+  105  ls /
+  106  ls
+  107  sl
+  108  cat when.yml 
+  109  history
+  110  ansible halt
+  111  history
+  112  cd /etc/ansible/
+  113  ls
+  114  cat hosts 
+  115  vim robim.yml
+  116  ansible-playbook robim.yml -C
+  117  > teste.txt
+  118  ansible-playbook robim.yml -C
+  119  ssh 192.168.99.20 
+  120  ifconfig 
+  121  ping 192.168.99.20
+  122  route -n
+  123  ping 192.168.99.10
+  124  ping 192.168.99.20
+  125  ping 192.168.99.30
+  126  ansible-playbook robim.yml -C
+  127  ifconfig 
+  128  cat /etc/network/interfaces
+  129  ls
+  130  cat robim.yml 
+  131  vim robim.yml 
+  132  ansible-playbook robim.yml -C
+  133  ansible-playbook robim.yml
+  134  cat /etc/hosts
+  135  ansible all -m command -a 'free -h'
+  136  vim lab2.yml
+  137  #ansible-playbook lab2.yml -C
+  138  vim index.php
+  139  ansible-playbook lab2.yml -C
+  140  vim index.php
+  141  vim lab2.yml
+  142  ansible-playbook lab2.yml -C
+  143  vim lab2.yml
+  144  ansible-playbook lab2.yml -C
+  145  vim lab2.yml
+  146  ansible-playbook lab2.yml -C
+  147  vim lab2.yml
+  148  ansible-playbook lab2.yml 
+  149  cat lab2.yml 
+  150  vim lab2.yml
+  151  ansible-playbook lab2.yml 
+  152  vim ansible.cfg 
+  153  history
+  154  cd /etc/ansible/
+  155  ls
+  156  mkdir roles
+  157  vim ansible.cfg 
+  158  cd roles/
+  159  ls
+  160  ansible-galaxy init capuz_vermelho
+  161  ls
+  162  cd capuz_vermelho/
+  163  ls
+  164  vim README.md 
+  165  ls -R *
+  166  cd tasks/
+  167  ls
+  168  > prerequisitos.yml
+  169  > install_nginx.yml
+  170  > deploy.yml
+  171  ls
+  172  vim prerequisitos.yml 
+  173  mv prerequisitos.yml prerequisitos_debian.yml 
+  174  cp prerequisitos_debian.yml prerequisitos_centos.yml 
+  175  cat prerequisitos_debian.yml 
+  176  vim prerequisitos_centos.yml 
+  177  vim install_nginx.yml 
+  178  vim deploy.yml 
+  179  cat install_nginx.yml 
+  180  cat deploy.yml 
+  181  vim deploy.yml 
+  182  cd 
+  183  cd /etc/ansible/roles/capuz_vermelho/templates/
+  184  ls
+  185  vim index.html
+  186  cd ../vars/
+  187  vim main.yml
+  188  cat main.yml 
+  189  cd ../tasks/
+  190  vim main.yml 
+  191  cat main.yml 
+  192  cat ../vars/main.yml 
+  193  cd ../
+  194  cp tests/test.yml /root/playbooks/
+  195  cd /root/playbooks/
+  196  ls
+  197  mv test.yml jason_tood.yml
+  198  vim jason_tood.yml
+  199  vim /etc/ansible/roles/capuz_vermelho/tasks/main.yml 
+  200  cat jason_tood.yml 
+  201  cat /etc/ansible/roles/capuz_vermelho/tasks/main.yml
+  202  pwd
+  203  #ansible-playbook jason_tood.yml 
+  204  vim jason_tood.yml 
+  205  vim /etc/ansible/roles/capuz_vermelho/tasks/main.yml
+  206  cat /etc/ansible/roles/capuz_vermelho/tasks/main.yml
+  207  ansible-playbook jason_tood.yml 
+  208  vim /etc/ansible/roles/capuz_vermelho/tasks/prerequisitos_centos.yml 
+  209  ansible-playbook jason_tood.yml 
+  210  vim /etc/ansible/roles/capuz_vermelho/tasks/prerequisitos_centos.yml 
+  211  cat /etc/ansible/roles/capuz_vermelho/templates/index.html 
+  212  cat /etc/ansible/roles/capuz_vermelho/tasks/deploy.yml 
+  213  cd /etc/ansible/
+  214  ls
+  215  cd roles/
+  216  ls
+  217  ansible-galaxy init puppet
+  218  ls
+  219  cd puppet/
+  220  cd ..
+  221  cd capuz_vermelho/
+  222  ls
+  223  cd ..
+  224  cd puppet/
+  225  cd tasks/
+  226  ls
+  227  > prerequisitos.yml
+  228  ls
+  229  > install_ubuntu.yml
+  230  > install_centos.yml
+  231  ls
+  232  vim main.yml 
+  233  vim install_ubuntu.yml 
+  234  vim install_centos.yml 
+  235  vim prerequisitos.yml 
+  236  vim install_centos.yml 
+  237  cp install_ubuntu.yml prerequisitos.yml 
+  238  vim prerequisitos.yml 
+  239  cp install_centos.yml prerequisitos.yml 
+  240  vim prerequisitos.yml 
+  241  vim install_centos.yml 
+  242  vim prerequisitos.yml 
+  243  vim install_centos.yml 
+  244  cd /etc/ansible/
+  245  cd roles/
+  246  ls
+  247  cd puppet/
+  248  cd tasks/
+  249  ls
+  250  vim prerequisitos.yml 
+  251  cat prerequisitos.yml
+  252  vim install_ubuntu.yml 
+  253  cat install_ubuntu.yml
+  254  vim install_centos.yml 
+  255  cat install_centos.yml
+  256  vim main.yml 
+  257  cat main.yml
+  258  cd ..
+  259  ls
+  260  cd tests
+  261  ls
+  262  vim test.yml 
+  263  cat test.yml 
+  264  ansible-playbook test.yml -C
+  265  ls /tmp/
+  266  cd ../
+  267  ls
+  268  cd tasks/
+  269  ls
+  270  vim prerequisitos.yml 
+  271  vim install_ubuntu.yml 
+  272  vim install_centos.yml 
+  273  cd - 
+  274  cd tests/
+  275  ansible-playbook test.yml 
+  276  ls
+  277  cd ..
+  278  ls
+  279  cd /opt/
+  280  ll
+  281  ansible-playbook /etc/ansible/roles/puppet/tests/test.yml 
+  282  cd /etc/ansible/roles/puppet/
+  283  ls
+  284  cd tasks/
+  285  ls]
+  286  ls
+  287  vim install_centos.yml 
+  288  vim prerequisitos.yml 
+  289  cd ..
+  290  cd tasks/
+  291  vim main.yml 
+  292  vim install_centos.yml 
+  293  ansible-playbook /etc/ansible/roles/puppet/tests/test.yml 
+  294  cd
+  295  puppet --version
+  296  puppet resource package ccze ensure-present
+  297  puppet resource package ccze ensure=present
+  298  tail /var/log/syslog 
+  299  tail -f /var/log/syslog | ccze
+  300  puppet resource service apache2
+  301  puppet resource service apache2 enable=false
+  302  puppet resource service apache2
+  303  puppet resource service apache2 ensure=stopped
+  304  systemctl status apache2
+  305  puppet resource service apache2 ensure=running
+  306  puppet resource user joker
+  307  puppet resource user joker ensure=present shell=/bin/bash managehome=true
+  308  getent passwd joker
+  309  puppet resource package puppetserver
+  310  puppet resource package puppetserver ensure=present
+  311  puppet resource package puppetserver
+  312  cd /etc/puppetlabs/
+  313  ls
+  314  puppet resource service pxp-agent
+  315  free -h
+  316  vim /etc/default/puppetserver 
+  317  puppet resource service puppetserver enable=true ensure=running
+  318  ss -lntp
+  319  free -h
+  320  ls
+  321  cd
+  322  ls
+  323  vim speedy.pp
+  324  cat speedy.pp
+  325  puppet apply speedy.pp
+  326  vim speedy.pp
+  327  wc -l speedy.pp
+  328  vim speedy.pp
+  329  md5sum /opt/memfree 
+  330  vim /opt/memfree 
+  331  ls -lh /opt/memfree 
+  332  facter
+  333  facter hosname
+  334  facter os
+  335  cd /etc/puppetlabs/
+  336  ls
+  337  cd puppet
+  338  ls
+  339  vim puppet.conf 
+  340  puppet config print
+  341  cd ..
+  342  ls
+  343  cd code/
+  344  ls
+  345  cd environments/
+  346  ls
+  347  cd production/
+  348  ls
+  349  cd modules/
+  350  ls
+  351  cd ..
+  352  ls
+  353  cd ..
+  354  puppet agent -t --server devops.salas4linux.com.br
+  355  cd ..
+  356  vim puppet/puppet.conf 
+  357  cat puppet/puppet.conf
+  358  systemctl restart puppetserver
+  359  ss -lntp
+  360  puppetserver ca list
+  361  puppetserver ca list --all
+  362  puppetserver ca sign --certname docker.salas4linux.com.br
+  363  puppetserver ca sign --all
+  364  puppetserver ca list --all
+  365  puppet agent -t --server devops.salas4linux.com.br
+  366  ss -lntp
+  367  ss -lntp | grep 8140
+  368  puppetserver ca list --all
+  369  puppetserver ca list 
+  370  puppet resource package pdk
+  371  puppet resource package pdk ensure=present
+  372  puppet resource package pdk
+  373  cd /etc/puppetlabs/code/modules/
+  374  ls
+  375  pdk new module mulher_gaviao
+  376  ls
+  377  cd mulher_gaviao/
+  378  ls
+  379  cd manifests/
+  380  ls
+  381  > init.pp
+  382  ls
+  383  vim init.pp 
+  384  cat init.pp
+  385  vim ../files/puppet.conf
+  386  cat ../files/puppet.conf 
+  387  cd
+  388  cd /etc/puppetlabs/code/environments/production/manifests/
+  389  ls
+  390  vim zattana.pp
+  391  cat zattana.pp
+  392  puppet agent -t --server devops.salas4linux.com.br
+  393  cd /etc/puppetlabs/code/modules/
+  394  pdk new module canario_negra
+  395  ls
+  396  cd canario_negra/
+  397  ls
+  398  cd manifests/
+  399  vim init.pp
+  400  puppet parser validate init.pp
+  401  vim init.pp
+  402  puppet parser validate init.pp
+  403  vim init.pp
+  404  cd ~/.bashrc ../files/bashrc_base
+  405  cp ~/.bashrc ../files/bashrc_base
+  406  #vim ../files/bashrc_base 
+  407  vim init.pp
+  408  cat init.pp 
+  409  vim ../files/bashrc_base 
+  410  vim init.pp
+  411  vim ../files/bash_logout
+  412  cd
+  413  /etc/puppetlabs/code/environments/production/manifests/
+  414  cd /etc/puppetlabs/code/environments/production/manifests/
+  415  vim zattana.pp 
+  416  vim init.pp
+  417  cd
+  418  cd /etc/puppetlabs/code/modules/canario_negra/manifests/
+  419  vim init.pp 
+  420  puppet parser validate init.pp
+  421  vim init.pp 
+  422  puppet parser validate init.pp
+  423  cat ../files/bashrc_base 
+  424  vim zattana.pp 
+  425  vim init.pp 
+  426  cat init.pp 
+  427  vim init.pp 
+  428  root@devops:/etc/puppetlabs/code/modules/canario_negra/manifests# vim init.pp 
+  429  root@devops:/etc/puppetlabs/code/modules/canario_negra/manifests# vim ../files/bash_logout
+  430  vim zattana.pp
+  431  cd /etc/puppetlabs/code/environments/production/manifests
+  432  vim zattana.pp 
+  433  cat zattana.pp
+  434  HISTORY
+  435  history
+  436  cat ../files/bash_logout
+  437  cd ..
+  438  ls
+  439  cd modules/
+  440  ls
+  441  cd canario_negra/
+  442  ls
+  443  vim ../files/bash_logout
+  444  git --version
+  445  mkdir cyborg
+  446  cd cyborg/
+  447  git init
+  448  ls -a
+  449  cd .git/
+  450  ls
+  451  cd ..
+  452  git config user.name "Beth Moura"
+  453  git config user.mail "emoura.sp@gmail.com"
+  454  cat .git/config 
+  455  git config --global user.mail "emoura.sp@gmail.com"
+  456  git config --global user.name "Beth Moura"
+  457  cat .git/config 
+  458  cat ~/.gitconfig 
+  459  > README.md
+  460  vim README.md
+  461  cat README.md
+  462  git status
+  463  git add README.md 
+  464  git status
+  465  git commit -m "Arquivo README - Criado"
+  466  git config --global user.email "emoura.sp@gmail.com"
+  467  git log
+  468  ls
+  469  > teste.md
+  470  vim teste.md
+  471  git status
+  472  git add teste.md
+  473  git status
+  474  git commit -m "Arquivo de teste criado"
+  475  git status
+  476  git log
+  477  > donna_troy.sh
+  478  vim donna_troy.sh
+  479  git status
+  480  git add donna_troy.sh
+  481  git commit -m "Shell Script - pingar hosts"
+  482  git status
+  483  bash donna_troy.sh 
+  484  vim donna_troy.sh 
+  485  cat donna_troy.sh
+  486  git status
+  487  git commit -a -m "Adição da Variável IP no echo"
+  488  git log
+  489  ls
+  490  cd cyborg/
+  491  ls
+  492  git status
+  493  git remote add bruce https://github.com/emourasp/Cyborg.git
+  494  git remote -v
+  495  git push bruce master
+  496  mkdir infraagil
+  497  cd infraagil/
+  498  git init
+  499  ls /etc/ansible/
+  500  cp -r /root/playbooks/ .
+  501  ls
+  502  cp -r /etc/ansible/ .
+  503  ls
+  504  cr -r /etc/puppetlabs/ .
+  505  cp -r /etc/puppetlabs/ .
+  506  ls
+  507  history > historico_aula

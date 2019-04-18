@@ -1,0 +1,10 @@
+- name: Instalando Repositório Ubuntu
+  apt:
+   deb: /tmp/puppet.deb
+   state: present
+
+- name: Instalando o PUPPET-AGENT - UBUNTU
+  apt:
+    name: puppet-agent
+    update_cache: yes
+    state: present

@@ -1,0 +1,11 @@
+- name: Baixando o pacote  Ubuntu
+  get_url:
+   url: https://apt.puppetlabs.com/puppet6-release-xenial.deb
+   dest: /tmp/puppet.deb
+  when: ansible_os_family == "Debian"
+
+- name: Baixando o pacote CentOs
+  get_url:
+   url: https://yum.puppet.com/puppet6/puppet6-release-el-7.noarch.rpm
+   dest: /tmp/puppet.rpm
+  when: ansible_os_family == "RedHat"

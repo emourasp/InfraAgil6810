@@ -1,0 +1,51 @@
+---
+ - name: Exercícios ansible
+   hosts: all
+   tasks:
+   - name: STOPAR O NGNIX #sempre antes de desinstalar é bom stopar
+     systemd:
+      name: nginx
+      state: stopped
+     ignore_errors: True
+
+   - name: Remover o NGINX
+     package:
+      name: nginx*
+      state: absent
+
+   - name: Instalar Apache UBUNTU
+     package:
+      name: [ 'apache2','libapache2-mod-php7.0', 'php7.0']
+      state: present
+     when: ansible_distribution == "Ubuntu"
+
+   - name: Instalar HTTPD CENTOS
+     package:
+      name: [ 'httpd', 'php' ]
+      state: present
+     notify: httpd
+     when: ansible_distribution == "CentOs"
+
+   - name: Habilitar o módulo PHP no Ubuntu
+     apache2_module:
+      name: php7.0
+      state: present
+     notify: apache2
+     when: ansible_distribution == "Ubuntu"
+
+   - name: Copiando index.php
+     copy:
+      src: index.php
+      dest: /var/www/html/
+
+   handlers:
+   - name: httpd
+     systemd:
+      name: httpd
+      state: restarted
+
+   - name: apache2
+     systemd:
+      name: apache2
+      state: restarted
+ 
